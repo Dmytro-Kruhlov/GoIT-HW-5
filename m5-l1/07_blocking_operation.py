@@ -1,9 +1,11 @@
 import asyncio
+import time
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 
 
 def io_bound():
     with open(__file__, "r") as fd:
+        time.sleep(3)
         return fd.read(15)
 
 
